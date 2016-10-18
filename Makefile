@@ -1,4 +1,4 @@
-BOARD ?= arduino_101_factory
+BOARD ?= arduino_101
 KERNEL ?= micro
 UPDATE ?= exit
 
@@ -130,7 +130,7 @@ ifeq ($(DEV), ashell)
 else
 	cp prj.conf.base prj.conf
 endif
-ifeq ($(BOARD), arduino_101_factory)
+ifeq ($(BOARD), arduino_101)
 ifeq ($(ZJS_PARTITION), 256)
 	cat prj.conf.partition_256 >> prj.conf
 endif
@@ -190,7 +190,7 @@ arc:
 ifeq ($(ZJS_PARTITION), 256)
 	@cat arc/prj.conf.partition_256 >> arc/prj.conf
 endif
-	@cd arc; make BOARD=arduino_101_sss_factory
+	@cd arc; make BOARD=arduino_101_sss
 
 # Run debug server over JTAG
 .PHONY: debug
